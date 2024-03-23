@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Reading and Printing</title>
+</head>
+<body>
+
+<div id="div">
+    <form id="myForm" >
+        
+        <label >First Name:</label>
+        <input type="text" id="firstName" name="firstName" pattern="[a-zA-Z]+" required>
+        <br><br>
+        <label >Last Name:</label>
+        <input type="text" id="lastName" name="lastName" pattern="[a-zA-Z]+" required>
+        <br><br>
+        <label >Username:</label>
+        <input type="username" id="Username" name="username" pattern="[a-zA-Z0-9\s-_]+" required>
+        <br><br>
+        <label >Password:</label>
+        <input type="password" id="password" name="password" pattern="[a-zA-Z0-9\s-_]+" required>
+        <br><br>
+        <label >Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        <label >Phone number:</label>
+        <input type="text" id="phno" name="phno" pattern="[\d{10}]+" required>
+        <br><br>     
+        <input type="button" onclick="readAndPrint()" value="Submit">
+        <input type="reset" value="reset">
+
+    </form>
+</div>
+    <div id="container"></div>
+    <script>
+        function readAndPrint() {
+
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const username = document.getElementById('Username').value;
+            const password = document.getElementById('password').value;
+            const email = document.getElementById('email').value;
+            const phno = document.getElementById('phno').value;
+           
+            document.getElementById("container").innerText=firstName+"\n"+lastName+"\n"+username+"\n"+password+"\n"+email+"\n"+phno;
+        }
+    </script>
+
+</body>
+</html>
